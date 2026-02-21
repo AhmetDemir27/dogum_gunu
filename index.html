@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Çağla ❤️</title>
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #ff4e88, #ff9ecf);
+    font-family: 'Segoe UI', sans-serif;
+    text-align: center;
+}
+
+.container {
+    color: white;
+    z-index: 2;
+}
+
+h1 {
+    font-size: 50px;
+    animation: glow 2s infinite alternate;
+}
+
+p {
+    font-size: 22px;
+    margin-top: 15px;
+    max-width: 500px;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 10px #fff; }
+    to { text-shadow: 0 0 40px #ff0066; }
+}
+
+/* Kalpler */
+.heart {
+    position: absolute;
+    color: rgba(255,255,255,0.8);
+    font-size: 20px;
+    animation: float 6s linear infinite;
+}
+
+@keyframes float {
+    from {
+        transform: translateY(100vh) scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-10vh) scale(1.5);
+        opacity: 0;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>💖 Happy Birthday Çağla 💖</h1>
+    <p>
+        İyi ki hayatıma girdin...  
+        Senin gülüşün en güzel günüm,  
+        varlığın en büyük şansım.  
+        Nice doğum günlerini birlikte kutlayalım ❤️
+    </p>
+</div>
+
+<script>
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (Math.random() * 20 + 15) + "px";
+    heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 6000);
+}
+
+setInterval(createHeart, 300);
+</script>
+
+</body>
+</html>
